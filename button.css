@@ -1,0 +1,61 @@
+body{
+    height: 100vh;
+    background: #111;
+    display: flex;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+.glass-btn{
+    position: relative;
+}
+button{
+    color: #fff;
+    padding: 0.5em 2em;
+    font-size: 1.5em;
+    cursor: pointer;
+    letter-spacing: 2px;
+}
+button, button::before, button::after{
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(7.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+button::before, button::after{
+    content: "";
+    position: absolute;
+    animation: float 4s infinite;
+}
+button::before{
+left: -0.7em;
+bottom: -0.7em;
+width: 1.5em;
+height: 1.5em;
+animation-delay: 0.5s;
+}
+button::after{
+    right: -0.7em;
+    top: -0.7;
+    width:2em;
+    height: 2em;
+}
+span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 6em;
+    height: 6em;
+    background: #0814bd;
+    border-radius: 50%;
+    z-index: -1;
+}
+button:hover{
+    font-size: 1.7em;
+}
+@keyframes float {
+    50%{transform: translateY(-0.5em);}
+}
